@@ -2,15 +2,12 @@ import queue
 import random
 import time
 
-# Створення черги заявок
 request_queue = queue.Queue()
 
-# Функція для генерації нових заявок
 def generate_request(request_id):
     print(f"Generating request #{request_id}")
     request_queue.put(request_id)
 
-# Функція для обробки заявок
 def process_request():
     if not request_queue.empty():
         request_id = request_queue.get()
@@ -18,7 +15,6 @@ def process_request():
     else:
         print("No requests to process. The queue is empty.")
 
-# Головний цикл програми
 def main():
     request_id = 1
     while True:
